@@ -1,3 +1,4 @@
+const debug = require('../configs/debug')
 const express = require('express')
 const router = express.Router()
 
@@ -7,9 +8,12 @@ const middlewareReply = require('../middlewares/reply')
 
 router
   .route('/')
+  .get((request, response) => {
+    debug.log(`hithit`)
+  })
   // .get(middlewareVerification)
   // .get(express.text({ type: 'text/xml' }))
-  .get(middlewareXMLParser)
+  // .get(middlewareXMLParser)
   // .get(middlewareReply)
 
 module.exports = router
