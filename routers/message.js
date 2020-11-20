@@ -6,18 +6,11 @@ const middlewareVerification = require('../middlewares/verification')
 const middlewareXMLParser = require('../middlewares/xml-parser')
 const middlewareReply = require('../middlewares/reply')
 
-router.use((request, response, next) => {
-  debug.log(`hit1`)
-  next()
-})
-
-router.use((request, response, next) => {
-  debug.log(`hit2`)
-})
-  
-  // .get(middlewareVerification)
-  
-  // .get(middlewareXMLParser)
-  // .get(middlewareReply)
+if (!process.env.VERIFIED) {
+  router.use(middlewareVerification)
+} else {
+  router.use(middlewareXMLParser)
+  // router.use(middlewareReply)
+}
 
 module.exports = router
