@@ -25,10 +25,9 @@ module.exports = (request, response) => {
     replied XML
     ${xml}
   `)
-  setTimeout(() => {
-    removeMessage(request.messageId)
-    response.type('text/xml')
-    response.send(xml)
-  }, 2500)
-  // return
+  
+  removeMessage(request.messageId)
+  response.type('text/xml')
+  response.send(xml)
+  return
 }
