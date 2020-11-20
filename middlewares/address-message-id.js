@@ -1,4 +1,4 @@
-
+const debug = require('~/configs/debug')
 const promisifyAsync = require('~/utils/promisify-async')
 const createMessageId = require('~/libs/create-message-id')
 const checkIfLocalMessageIdFound = require('~/libs/check-if-local-message-id-found')
