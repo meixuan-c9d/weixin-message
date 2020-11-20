@@ -4,11 +4,8 @@ const express = require('express')
 const app = express()
 
 const routerMessage = require('./routers/message')
-app.use(express.text({ type: 'text/xml' }))
-app.use((request, response, next) => {
-	debug.log(`hit`)
-	next()
-})
+// app.use(express.text({ type: 'text/xml' }))
+
 app.use('/message', routerMessage)
 
 
