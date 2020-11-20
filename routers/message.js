@@ -11,3 +11,5 @@ router
   .get(express.text({ type: 'text/xml' }))
   .get(middlewareXMLParser)
   // .get(middlewareReply)
+
+module.exports = router
