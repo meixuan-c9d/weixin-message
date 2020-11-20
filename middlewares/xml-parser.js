@@ -6,11 +6,11 @@ const promisifyAsync = require('../utils/promisify-async')
 
 module.exports = promisifyAsync(async(request, response, next) => {
   debug.log('parser hit')
-  const xmlBody = (await xmlParseString(request.body)).xml
-  debug.log(`
-    xmlBody %O
-  `, xmlBody)
-  request.xmlBody = xmlBody
+  // const xmlBody = (await xmlParseString(request.body)).xml
+  // debug.log(`
+  //   xmlBody %O
+  // `, xmlBody)
+  // request.xmlBody = xmlBody
 
   // next()
 })
