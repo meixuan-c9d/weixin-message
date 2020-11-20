@@ -9,7 +9,7 @@ const middlewareReply = require('../middlewares/reply')
 router
   .route('/')
   .get((request, response) => {
-    debug.log(`hithit`)
+    debug.log(`${request.originalUrl}`)
   })
   // .get(middlewareVerification)
   // .get(express.text({ type: 'text/xml' }))
