@@ -6,13 +6,10 @@ const middlewareVerification = require('../middlewares/verification')
 const middlewareXMLParser = require('../middlewares/xml-parser')
 const middlewareReply = require('../middlewares/reply')
 
+router.use(express.text({ type: 'text/xml' }))
 router
   .route('/')
-  .get((request, response) => {
-    debug.log(`${request.originalUrl}`)
-  })
-  // .get(middlewareVerification)
-  // .get(express.text({ type: 'text/xml' }))
+  .get(middlewareVerification)
   // .get(middlewareXMLParser)
   // .get(middlewareReply)
 
