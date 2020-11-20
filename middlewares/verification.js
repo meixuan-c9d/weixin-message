@@ -1,4 +1,4 @@
-const promisifyAsync = require('./utils/promisify-async')
+const promisifyAsync = require('../utils/promisify-async')
 module.exports = promisifyAsync(async(request, response, next) => {
   debug.log(`
     request originalUrl

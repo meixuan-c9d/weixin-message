@@ -1,5 +1,5 @@
 const { promisify } = require('util')
-const debug = require('./configs/debug')
+const debug = require('../configs/debug')
 const xml2js = require('xml2js')
 const xmlParseString = promisify(xml2js.parseString) 
 
@@ -10,6 +10,6 @@ module.exports = promisifyAsync(async(request, response, next) => {
     xmlBody %O
   `, xmlBody)
   request.xmlBody = xmlBody
-  
+
   // next()
 })
