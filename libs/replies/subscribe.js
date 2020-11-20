@@ -1,4 +1,4 @@
-const debug = require('~/config/debug')
+const debug = require('~/configs/debug')
 const xmlBuilder = require('./xml-builder')
 const removeMessage = require('~/libs/remove-message.js')
 module.exports = (request, response) => {
