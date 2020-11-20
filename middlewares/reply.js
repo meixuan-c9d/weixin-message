@@ -1,7 +1,7 @@
 const { promisify } = require('util')
 const xml2js = require('xml2js')
-const debug = require('../configs/debug')
-const promisifyAsync = require('../utils/promisify-async')
+const debug = require('~/configs/debug')
+const promisifyAsync = require('~/utils/promisify-async')
 // const redisClient = require('../configs/redis')
 
 // const xmlBuilder = new xml2js.Builder({
@@ -11,5 +11,7 @@ const promisifyAsync = require('../utils/promisify-async')
 // })
 
 module.exports = promisifyAsync(async(request, response, next) => {
-
+  debug.log(`
+    replying ... coming soon
+  `)
 })

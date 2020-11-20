@@ -1,3 +1,4 @@
+require('module-alias/register')
 require('./configs/environment')()
 const debug = require('./configs/debug')
 const express = require('express')
