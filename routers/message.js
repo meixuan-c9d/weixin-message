@@ -7,9 +7,9 @@ const middlewareReply = require('../middlewares/reply')
 
 router
   .route('/')
-  // .get(middlewareVerification)
-  .get(express.text({ type: 'text/xml' }))
-  .get(middlewareXMLParser)
+  .get(middlewareVerification)
+  // .get(express.text({ type: 'text/xml' }))
+  // .get(middlewareXMLParser)
   // .get(middlewareReply)
 
 module.exports = router
