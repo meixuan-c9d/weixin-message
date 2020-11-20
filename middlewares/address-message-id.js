@@ -8,7 +8,7 @@ module.exports = promisifyAsync(async (request, response, next) => {
   debug.log(`
     message id ${messageId}
   `)
-  const ifLocalMessageIdFound = checkIfLocalMessageIdFound(messageId)
+  const ifLocalMessageIdFound = await checkIfLocalMessageIdFound(messageId)
   if (!ifLocalMessageIdFound) {
     debug.log(`message id not found`)
     // message not found
