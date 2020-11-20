@@ -10,5 +10,5 @@ module.exports = promisifyAsync(async(request, response, next) => {
     xmlBody %O
   `, xmlBody)
   request.xmlBody = xmlBody  
-  response.sendStatus(200)
+  // response.sendStatus(200)
 })
