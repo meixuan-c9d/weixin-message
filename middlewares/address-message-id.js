@@ -2,7 +2,7 @@ const debug = require('~/configs/debug')
 const promisifyAsync = require('~/utils/promisify-async')
 const createMessageId = require('~/libs/create-message-id')
 const checkIfLocalMessageIdFound = require('~/libs/check-if-local-message-id-found')
-const saveMessageId = require('~/libs/save-message-id')
+const saveMessage = require('~/libs/save-message')
 module.exports = promisifyAsync(async (request, response, next) => {
   const messageId = createMessageId(request.xmlBody)
   debug.log(`
@@ -13,12 +13,14 @@ module.exports = promisifyAsync(async (request, response, next) => {
     debug.log(`message id not found`)
     // message not found
     // save the entry
-    saveMessageId(messageId)
+    saveMessage(messageId)
+    request.messageId = messageId
     next()
   } else {
     debug.log(`message id found`)
     // message found but yet processed
-    // tell not to retry
+    // tell weixin not to retry
+    // not continuing dealing with the message
     response.sendStatus(200)
   }
 })

@@ -1,17 +1,15 @@
-const { promisify } = require('util')
-const xml2js = require('xml2js')
 const debug = require('~/configs/debug')
 const promisifyAsync = require('~/utils/promisify-async')
-// const redisClient = require('../configs/redis')
-
-// const xmlBuilder = new xml2js.Builder({
-// 	headless: true,
-// 	rootName: 'xml',
-// 	cdata: true
-// })
-
+const replySubscribe = require('~/libs/replies/subscribe')
 module.exports = promisifyAsync(async(request, response, next) => {
   debug.log(`
-    replying ... coming soon
+    replying...
   `)
+  switch(request.xmlBody.Event[0]) {
+    case 'subscribe':
+      replySubscribe(request, response)
+      break
+    default:
+      response.sendStatus(200)
+  }
 })

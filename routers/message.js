@@ -1,4 +1,3 @@
-const debug = require('~/configs/debug')
 const express = require('express')
 const router = express.Router()
 
