@@ -9,6 +9,7 @@ const middlewareReply = require('../middlewares/reply')
 if (!process.env.VERIFIED) {
   router.use(middlewareVerification)
 } else {
+  router.use(express.text({ type: 'text/xml' }))
   router.use(middlewareXMLParser)
   // router.use(middlewareReply)
 }
