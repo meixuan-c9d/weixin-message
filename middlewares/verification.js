@@ -1,6 +1,6 @@
 const debug = require('~/configs/debug')
-const promisifyAsync = require('~/utils/promisify-async')
-module.exports = promisifyAsync(async(request, response, next) => {
+const wrap = require('~/utils/wrap')
+module.exports = wrap(async(request, response, next) => {
   debug.log(`
     request originalUrl
     %O

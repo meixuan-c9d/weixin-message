@@ -1,7 +1,7 @@
 const debug = require('~/configs/debug')
-const promisifyAsync = require('~/utils/promisify-async')
+const wrap = require('~/utils/wrap')
 const replySubscribe = require('~/libs/replies/subscribe')
-module.exports = promisifyAsync(async(request, response, next) => {
+module.exports = wrap(async(request, response, next) => {
   debug.log(`
     replying...
   `)
