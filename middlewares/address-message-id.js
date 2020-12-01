@@ -21,6 +21,6 @@ module.exports = wrap(async (request, response, next) => {
     // message found but yet processed
     // tell weixin not to retry
     // not continuing dealing with the message
-    response.sendStatus(200)
+    response.end('')
   }
 })

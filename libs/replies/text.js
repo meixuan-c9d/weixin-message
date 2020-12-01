@@ -32,9 +32,7 @@ module.exports = (request, response, content) => {
     response.type('text/xml')
     response.send(xml)
     return
-  } else {
-    debug.log(`hitttttt`)
-    response.end('')
-    return
   }
+
+  return response.end('')
 }

@@ -13,7 +13,7 @@ module.exports = wrap(async(request, response, next) => {
         replySubscribe(request, response)
         break
       default:
-        response.sendStatus(200)
+        response.end('')
     }
   } 
 
@@ -23,7 +23,7 @@ module.exports = wrap(async(request, response, next) => {
         replyText(request, response, request.xmlBody.Content[0])
         break
       default:
-        response.sendStatus(200)
+        response.end('')
     }
   }
 
