@@ -3,7 +3,7 @@ const xmlBuilder = require('~/libs/xml-builder')
 const removeMessage = require('~/libs/remove-message.js')
 module.exports = (request, response, content) => {
 
-  if (content === '缘分') {
+  if (content === '缘分' || content === '缘份') {
     const xmlObject = request.xmlBody
     const replyObject = {
       ToUserName: xmlObject.FromUserName[0],
