@@ -4,9 +4,9 @@ const removeMessage = require('~/libs/remove-message.js')
 module.exports = (request, response, content) => {
 
   console.log(content)
-  response.end()
+  response.sendStatus(200)
   return
-  
+
   const xmlObject = request.xmlBody
   const replyObject = {
     ToUserName: xmlObject.FromUserName[0],
