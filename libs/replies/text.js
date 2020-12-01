@@ -14,10 +14,10 @@ module.exports = (request, response, content) => {
       Articles: {
         item: [
           {
-            Title: 'subscribe title',
-            Description: 'subscribe description',
-            PicUrl: 'n/a',
-            Url: 'https://www.baidu.com'
+            Title: '原来家长与孩子间还有这层关系？',
+            Description: '快来测测你和孩子是哪种缘定的关系。',
+            PicUrl: 'http://www.c9-d.com/3li6xun/qinziceshi.thumbnail.jpg',
+            Url: 'http://www.c9-d.com/3li6xun/qinziceshi'
           }
         ]
       }
