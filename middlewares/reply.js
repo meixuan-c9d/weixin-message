@@ -6,18 +6,25 @@ module.exports = wrap(async(request, response, next) => {
   debug.log(`
     replying...
   `)
-  switch(request.xmlBody.Event[0]) {
-    case 'subscribe':
-      replySubscribe(request, response)
-      break
-    case 'text':
-      debug.log(`
-        ${request.xmlBody.Content}
-        ${typeof request.xmlBody.Content}
-      `)
-      // replyText(request, response, )
-      break
-    default:
-      response.sendStatus(200)
+
+  if (request.xmlBody.Event) {
+    switch(request.xmlBody.Event[0]) {
+      case 'subscribe':
+        replySubscribe(request, response)
+        break
+      default:
+        response.sendStatus(200)
+    }
+  } 
+
+  if (request.xmlBody.MsgType) {
+    switch(request.xmlBody.MsgType[0]) {
+      case 'text':
+        replyText(request, response, request.xmlBody.Content[0])
+        break
+      default:
+        response.sendStatus(200)
+    }
   }
+  response.sendStatus(200)
 })
