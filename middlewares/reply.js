@@ -11,7 +11,11 @@ module.exports = wrap(async(request, response, next) => {
       replySubscribe(request, response)
       break
     case 'text':
-      replyText(request, response, request.xmlBody.Content[0])
+      debug.log(`
+        ${request.xmlBody.Content}
+        ${typeof request.xmlBody.Content}
+      `)
+      // replyText(request, response, )
       break
     default:
       response.sendStatus(200)
