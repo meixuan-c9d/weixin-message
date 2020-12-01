@@ -34,7 +34,7 @@ module.exports = (request, response, content) => {
     return
   } else {
     debug.log(`hitttttt`)
-    response.sendStatus(200)
+    response.end('')
     return
   }
 }
