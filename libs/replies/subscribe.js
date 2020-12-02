@@ -16,6 +16,12 @@ module.exports = (request, response) => {
           Description: 'subscribe description',
           PicUrl: 'http://www.c9-d.com/3li6xun/tmp/test.jpg',
           Url: 'https://mp.weixin.qq.com/s/BrE21aja13SJz1KuGt8U4A'
+        },
+        {
+          Title: '',
+          Description: '',
+          PicUrl: '',
+          Url: ''
         }
       ]
     }
