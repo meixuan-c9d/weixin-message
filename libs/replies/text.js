@@ -1,7 +1,9 @@
 const debug = require('~/configs/debug')
 const xmlBuilder = require('~/libs/xml-builder')
 const removeMessage = require('~/libs/remove-message.js')
-module.exports = (request, response, content) => {
+module.exports = (request, response) => {
+
+  const content = request.xmlBody.Content[0]
 
   if (content === '缘分' || content === '缘份') {
     const xmlObject = request.xmlBody
