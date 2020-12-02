@@ -8,20 +8,14 @@ module.exports = (request, response) => {
     FromUserName: xmlObject.ToUserName[0],
     CreateTime: Date.now() / 1000 | 0,
     MsgType: 'news',
-    ArticleCount: 2,
+    ArticleCount: 1,
     Articles: {
       item: [
         {
-          Title: 'subscribe title',
-          Description: '',
-          PicUrl: 'http://www.c9-d.com/3li6xun/tmp/test.jpg',
-          Url: 'https://mp.weixin.qq.com/s/BrE21aja13SJz1KuGt8U4A'
-        },
-        {
-          Title: '',
-          Description: 'subscribe description',
-          PicUrl: 'http://www.c9-d.com/3li6xun/tmp/test.jpg',
-          Url: 'https://mp.weixin.qq.com/s/BrE21aja13SJz1KuGt8U4A'
+          Title: '<![CDATA[' + 'subscribe title' + ']]>',
+          Description: '<![CDATA[' + 'subscribe description' + ']]>',
+          PicUrl: '<![CDATA[' + 'http://www.c9-d.com/3li6xun/tmp/test.jpg' + ']]>',
+          Url: '<![CDATA[' + 'https://mp.weixin.qq.com/s/BrE21aja13SJz1KuGt8U4A' + ']]>'
         }
       ]
     }
