@@ -12,10 +12,10 @@ module.exports = (request, response) => {
     Articles: {
       item: [
         {
-          Title: '<![CDATA[' + 'subscribe title' + ']]>',
-          Description: '<![CDATA[' + 'subscribe description' + ']]>',
-          PicUrl: '<![CDATA[' + 'http://www.c9-d.com/3li6xun/tmp/test.jpg' + ']]>',
-          Url: '<![CDATA[' + 'https://mp.weixin.qq.com/s/BrE21aja13SJz1KuGt8U4A' + ']]>'
+          Title: 'title',
+          Description: 'description',
+          PicUrl: 'n/a',
+          Url: 'n/a'
         }
       ]
     }
