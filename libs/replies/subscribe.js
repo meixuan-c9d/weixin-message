@@ -8,7 +8,7 @@ module.exports = (request, response) => {
     FromUserName: xmlObject.ToUserName[0],
     CreateTime: Date.now() / 1000 | 0,
     MsgType: 'news',
-    ArticleCount: 1,
+    ArticleCount: 2,
     Articles: {
       item: [
         {
