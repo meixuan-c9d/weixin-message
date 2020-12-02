@@ -12,7 +12,8 @@ module.exports = (request, response) => {
   let replyObject
 
   const eventKey = xmlObject.EventKey[0]
-  const eventKeySplitted = eventKey.split('|*|')
+  const eventKeyDelimiter = ':'
+  const eventKeySplitted = eventKey.split(eventKeyDelimiter)
   const [eventKeyType, eventKeyValue] = eventKeySplitted
   
   if (eventKeyType === 'image') {

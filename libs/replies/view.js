@@ -2,31 +2,5 @@ const debug = require('~/configs/debug')
 const xmlBuilder = require('~/libs/xml-builder')
 const removeMessage = require('~/libs/remove-message.js')
 module.exports = (request, response) => {
-  // const xmlObject = request.xmlBody
-  // const eventKey = xmlObject.EventKey[0]
-  // const replyObjectBase = {
-  //   ToUserName: xmlObject.FromUserName[0],
-  //   FromUserName: xmlObject.ToUserName[0],
-  //   CreateTime: Date.now() / 1000 | 0,
-  // }
-
-  // if (eventKey === '') {
-    
-  //   const replyObject = Object.assign(replyObjectBase, {
-  //     MsgType: '',
-  //     MediaId: ''
-  //   })
-    
-  //   const xml = xmlBuilder.buildObject(replyObject)
-  //   debug.log(`
-  //     replied XML
-  //     ${xml}
-  //   `)
-
-  //   removeMessage(request.messageId)
-  //   response.type('text/xml')
-  //   response.send(xml)
-  //   return
-  // }
   return response.end('')
 }
