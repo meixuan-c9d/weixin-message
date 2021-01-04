@@ -1,8 +1,10 @@
 const debug = require('~/configs/debug')
 const wrap = require('~/utils/wrap')
-const replySubscribe = require('~/libs/replies/subscribe')
-const replyText = require('~/libs/replies/text')
-const replyClick = require('~/libs/replies/click')
+
+const replyNormalMessageText = require('~/libs/replies/normal-message/text')
+const replyEventPushingSubscribe = require('~/libs/replies/event-pushing/subscribe')
+const replyEventPushingCustomMenuEventClick = require('~/libs/replies/event-pushing/custom-menu-event/click')
+
 module.exports = wrap(async(request, response, next) => {
   debug.log(`
     replying...
@@ -17,12 +19,17 @@ module.exports = wrap(async(request, response, next) => {
 
   const messageType =request.xmlBody.MsgType[0].toLowerCase()
 
-  // text
-  if (messageType === 'text') {
-    replyText(request, response)
+  // normal message
+  if (
+    messageType === 'text'
+  ) {
+    // text
+    if (messageType === 'text') {
+      replyNormalMessageText(request, response)
+    }
   }
 
-  // event
+  // event pushing
   if (messageType === 'event') {
 
     if (!request.xmlBody.Event) {
@@ -34,24 +41,32 @@ MsgType 'event' found, yet Event not found
 
     const event = request.xmlBody.Event[0].toLowerCase()
 
-    switch(event) {
-      // event :: subscribe
-      case 'subscribe':
-        replySubscribe(request, response)
-        break
-      // event :: click
-      case 'click':
-        replyClick(request, response)
-        break
-      // event :: view
-      case 'view':
-        replyView(request, response)
-        break
-      default:
-        return response.end('')
+    // event pushing
+    if (
+      event === 'subscrible'
+    ) {
+      if (event === 'subscrible') {
+        replyEventPushingSubscribe(request, response)
+      }
     }
+
+    // custom-menu-event
+    else if (
+      event === 'click' ||
+      event === 'view'
+    ) {
+      if (event === 'click') {
+        replyEventPushingCustomMenuEventClick(request, response)
+      }
+      if (event === 'view') {
+
+      }
+    }
+
+    else {
+      return response.end('')
+    }
+  
   }
-
-
 
 })
