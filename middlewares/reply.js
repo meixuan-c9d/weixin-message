@@ -7,7 +7,7 @@ const replyEventPushingCustomMenuEventClick = require('~/libs/replies/event-push
 
 module.exports = wrap(async(request, response, next) => {
   debug.log(`
-    replying...
+replying...
   `)
 
   if (!request.xmlBody.MsgType) {
