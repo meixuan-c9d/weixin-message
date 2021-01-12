@@ -12,9 +12,10 @@ module.exports = wrap(async(request, response, next) => {
     nonce
   } = request.query
 
-  const token = process.env.NODE_ENV === 'production'
-    ? process.env.TOKEN
-    : process.env.TOKEN_DEV
+  // const token = process.env.NODE_ENV === 'production'
+  //   ? process.env.TOKEN
+  //   : process.env.TOKEN_DEV
+  const token = process.env.TOKEN
 
   const stringToHash = [
     token,
